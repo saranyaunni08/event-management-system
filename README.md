@@ -1,61 +1,193 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+Event Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A Laravel-based web application for creating, managing, and tracking events, invitations, and requisition lists. This system allows users to organize events, invite guests, and manage item requisitions with public or private visibility.
 
-## About Laravel
+Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Event Management: Create, view, and filter events by type and status.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+Invitations: Send invitations, track responses (accepted, pending, rejected), and manage guest lists.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Requisition Lists: Add items to events, mark them as gifts, and allow invited users to claim items.
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+Public/Private Visibility: Control whether requisition lists are visible to all users or only invited guests.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Responsive Design: Built with Tailwind CSS for a modern, mobile-friendly interface.
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+Livewire Integration: Real-time updates for dynamic components like requisition lists and invitations.
+
+Prerequisites
+
+
+
+
+
+PHP >= 8.1
+
+
+
+Composer
+
+
+
+Node.js and npm
+
+
+
+MySQL or another supported database
+
+
+
+Git
+
+Installation
+
+
+
+
+
+Clone the Repository
+
+git clone https://github.com/saranyaunni08/event-management-system
+cd event-management-system
+
+
+
+Install PHP Dependencies
+
+composer install
+
+
+
+Install JavaScript Dependencies
+
+npm install
+npm run build
+
+
+
+Set Up Environment
+
+
+
+
+
+Copy the example environment file:
+
+cp .env.example .env
+
+
+
+Update .env with your database credentials and other settings (e.g., DB_DATABASE, DB_USERNAME, DB_PASSWORD).
+
+
+
+Generate an application key:
+
+php artisan key:generate
+
+
+
+Run Database Migrations
+
+php artisan migrate
+
+
+
+Start the Development Server
+
+php artisan serve
+
+Access the application at http://localhost:8000.
+
+Usage
+
+
+
+
+
+Create an Event: Log in, go to "My Events," and click "Create Event" to add a new event with details like date, time, and type.
+
+
+
+Manage Invitations: Invite users to events and track their responses (accepted, pending, rejected).
+
+
+
+Requisition Lists: Add items to an event’s requisition list, toggle public/private visibility, and allow invited users to claim items.
+
+
+
+Filter Events: Use the search and filter options to view upcoming or past events by type or status.
+
+Project Structure
+
+event-management-system/
+├── app/
+│   ├── Livewire/
+│   │   ├── EventShow.php
+│   │   ├── RequisitionList.php
+│   ├── Models/
+│   │   ├── Event.php
+│   │   ├── Invitation.php
+│   │   ├── RequisitionItem.php
+├── resources/
+│   ├── views/
+│   │   ├── livewire/
+│   │   │   ├── event-show.blade.php
+│   │   │   ├── requisition-list.blade.php
+│   ├── css/
+│   ├── js/
+├── public/
+├── .gitignore
+├── composer.json
+├── package.json
+├── README.md
+
+Contributing
+
+Contributions are welcome! To contribute:
+
+
+
+
+
+Fork the repository.
+
+
+
+Create a feature branch: git checkout -b feature/your-feature.
+
+
+
+Commit your changes: git commit -m "Add your feature".
+
+
+
+Push to the branch: git push origin feature/your-feature.
+
+
+
+Open a pull request.
+
+License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+Contact
+
+For questions or feedback, open an issue or contact saranyaunnikrishnan08@gmail.com.
